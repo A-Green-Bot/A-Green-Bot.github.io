@@ -1,0 +1,1 @@
+- This is the GitHub Organization for Level 1 Team 2 for the We Connect The Dots Code-A-Thon 2023.
