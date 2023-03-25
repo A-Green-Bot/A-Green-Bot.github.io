@@ -1,0 +1,176 @@
+.intro {
+  background-image: url("images/recycle2.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  object-fit: cover;
+  padding: 20px;
+  padding-bottom: 155px;
+  margin-top: -9px;
+  margin-right: -8px;
+  margin-left: -8px;
+  height: 500px;
+  color: white;
+  font-size: 25px;
+}
+
+#heading-top {
+  text-align: center;
+  color: white;
+  padding: 50px;
+  font-size: 300%;
+  font-family: monospaced;
+  -webkit-backdrop-filter: blur(10px);
+  margin-top: 165px;
+  margin-left: -50px;
+  margin-right: -30px;
+  margin-bottom: 0px;
+}
+
+.nav {
+  list-style-type: none;
+  overflow: hidden;
+  background-color: #307c5f;
+  height: 30px;
+  padding-top: 10px;
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: -9px;
+  margin-left: -9px;
+  margin-bottom: 9px;
+  margin-right: -8px;
+  font-size: 150%;
+  padding-bottom: 20px;
+  /*position : fixed;
+  top : 0;*/
+}
+
+a {
+  color: black;
+  text-decoration: none;
+  font-size: 19px;
+}
+
+li a {
+  text-decoration: none;
+  font-size: 1.3em;
+  padding: 1em;
+  color: white;
+}
+
+li a:hover {
+  background-color: #0c3823;
+  padding-top: 10px;
+  padding-bottom: 40px;
+}
+
+.fade-in-text {
+  text-align: center;
+  font-size: 20px;
+  animation: fadeIn 7s;
+  margin-top: 20px;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+#fact-head {
+  margin-top: 90px;
+  font-size: 400%;
+  color: white;
+  padding-top: 40px;
+  margin-top: 11px;
+  font-weight: lighter;
+  /*text-shadow: 2px 0px 0px white;*/
+}
+
+#fact-img {
+  margin: 5px;
+  padding-right: 60px;
+  margin-left: 0px;
+}
+
+#fact-img img {
+  object-fit: cover;
+  height: 230px;
+  width: 230px;
+  margin-left: 5px;
+  padding-left: 30px;
+  margin-right: 0px;
+  background-color: /*#aa7c60;*/ #0c3823;
+  border-width: 3px;
+  border-radius: 7px;
+}
+
+#fact-box {
+  background-color: #307c5f;
+  margin-left: -1%;
+  margin-top: -90px;
+  padding-bottom: 60px;
+  margin-right: -8px;
+  margin-bottom: -40px;
+}
+
+/*the images row for 2nd box page 2*/
+#box2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 2em;
+  margin-left: 30px;
+}
+
+#words {
+  /*border: 5px solid black;*/
+  margin-left: 30px;
+  max-width: 220px;
+}
+
+/*bottom page 1*/
+#factDisplay {
+  background-color: #358856;
+  width: 900px;
+  text-align: center;
+  margin-left: 250px;
+  padding-top: 15px;
+  font-size: 200%;
+  margin-top: 100px;
+  padding-bottom: 30px;
+  border-radius: 20px;
+  color: #0c3823;
+  box-shadow: 13px 13px #0c3823;
+}
+
+#factBtn {
+  font-family: monospaced;
+  background-color: #0c3823;
+  color: white;
+  border-radius: 15px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 150%;
+  padding-left: 10px;
+}
+
+#fact {
+  text-align: center;
+  margin-top: 50px;
+  color: white;
+  font-family: monospaced;
+  font-size: 200%;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.logo {
+  margin-left: -9px;
+}
+
+#ACTIVE {
+  color: black;
+}
