@@ -1,0 +1,175 @@
+#takeactionpoem {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 25px;
+  margin-top: -50px;
+  width: 600px;
+}
+
+body {
+  background-color: #8c9e97;
+}
+.nav {
+  list-style-type: none;
+  overflow: hidden;
+  background-color: #8c9e97;
+  height: 30px;
+  padding-top: 10px;
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: -9px;
+  margin-left: -9px;
+  margin-bottom: 9px;
+  margin-right: -8px;
+  font-size: 150%;
+  padding-bottom: 20px;
+  /*position : fixed;
+  top : 0;*/
+}
+
+a {
+  color: black;
+  text-decoration: none;
+  font-size: 19px;
+}
+
+li a {
+  text-decoration: none;
+  font-size: 1.3em;
+  padding: 1em;
+  color: white;
+}
+
+li a:hover {
+  background-color: #596e66;
+  padding-top: 10px;
+  padding-bottom: 40px;
+}
+
+.intro {
+  background-image: url("images/home.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  object-fit: cover;
+  padding: 20px;
+  padding-bottom: 155px;
+  margin-top: -9px;
+  margin-right: -8px;
+  margin-left: -8px;
+  height: 500px;
+  color: white;
+  font-size: 25px;
+}
+
+#heading-top2 {
+  text-align: right;
+  color: white;
+  padding: 50px;
+  font-size: 300%;
+  font-family: monospaced;
+  margin-top: 0px;
+  margin-left: 250px;
+  margin-right: 20px;
+  margin-bottom: 0px;
+  width: 387px;
+  padding-right: 0px;
+}
+
+.fade-in-text {
+  text-align: center;
+  font-size: 20px;
+  animation: fadeIn 7s;
+  margin-top: 20px;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+#box3 {
+  display: flex;
+  flex-direction: row;
+  margin-top: 100px;
+  margin-left: 3px;
+}
+
+#box4 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  margin-top: -100px;
+  margin-left: 3px;
+}
+
+#animation {
+  margin-left: 250px;
+  margin-top: -30px;
+  border-color: #8c9e97;
+  border-width: 6px;
+  border-style: solid;
+  border-radius: 10px;
+}
+
+#steps {
+  margin-left: 350px;
+  margin-bottom: -4px;
+}
+
+hr {
+  border: 3px solid #596e66;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-left: -8px;
+  margin-right: -10px;
+}
+
+#questions {
+  background-color: #99b3a9;
+  margin-left: -8px;
+  margin-right: -15px;
+}
+
+#sowhat {
+  color: white;
+  margin-top: -70px;
+}
+
+.wrapper {
+  height: 200px;
+  display: grid;
+  place-items: center;
+}
+
+.typing {
+  width: 10ch;
+  animation: typing 2s steps(22), blink 0.5s step-end infinite alternate;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid;
+  font-family: monospace;
+  font-size: 2em;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
+.logo {
+  margin-left: -10px;
+}
+
+#ACTIVE {
+  color: black;
+}
