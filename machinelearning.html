@@ -1,0 +1,132 @@
+<DOCTYPE html>
+  <html lang="en">
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+      <title>Static Template</title>
+
+      <link rel="stylesheet" href="machine.learning.css" />
+    </head>
+
+    <body>
+      <nav>
+        <ul class="nav">
+          <li class="nav1"><a href="index.html">Home Page</a></li>
+          <li class="nav1"><a href="takeaction.html"> Take action </a></li>
+          <li class="nav1">
+            <a id="ACTIVE" href="machinelearning.html"> Our Solution </a>
+          </li>
+          <li class="nav1"><a href="contactus.html"> Support </a></li>
+        </ul>
+      </nav>
+
+      <div class="intro">
+        <center>
+          <h1 id="heading-top">
+            Zeebo
+          </h1>
+        </center>
+
+        <center>
+          <p id="machine_desc">
+            This machine learning algorithm will be used to sort between organic
+            and recyclable trash, where a camera can be placed on the overhead
+            of a conveyor belt, which can automatically detect whether the item
+            is organic or recyclable, which then moves the article of trash to
+            the proper mode of waste management, which can increase the amount
+            of recyclable material made from each bottle or bag, and streamline
+            the process from the recycling bin all the way to being another
+            product in a store.
+          </p>
+        </center>
+      </div>
+
+      <div class="logo">
+        <img src="images/logo.jpg" width="75" height="75" />
+      </div>
+
+      <p id="mission_s">
+        Originally founded as GreenBot, our mission is to help reduce global
+        environmental pollution and make the world a better place by increasing
+        the amount of material that can be recycled, and making the process of
+        doing so much more efficient, via grouping materials categorically.
+      </p>
+
+      <div id="TIM">Try it out !</div>
+      <button id="TIMBTN" type="button" onclick="init()">Start</button>
+      <div id="webcam-container"></div>
+      <div id="label-container"></div>
+      <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8/dist/teachablemachine-image.min.js"></script>
+      <script type="text/javascript">
+        // More API functions here:
+        // https://github.com/googlecreativelab/teachablemachine-community/tree/master/libraries/image
+
+        // the link to your model provided by Teachable Machine export panel
+        const URL = "https://teachablemachine.withgoogle.com/models/BjdA3e2S2/";
+
+        let model, webcam, labelContainer, maxPredictions;
+
+        // Load the image model and setup the webcam
+        async function init() {
+          const modelURL = URL + "model.json";
+          const metadataURL = URL + "metadata.json";
+
+          // load the model and metadata
+          // Refer to tmImage.loadFromFiles() in the API to support files from a file picker
+          // or files from your local hard drive
+          // Note: the pose library adds "tmImage" object to your window (window.tmImage)
+          model = await tmImage.load(modelURL, metadataURL);
+          maxPredictions = model.getTotalClasses();
+
+          // Convenience function to setup a webcam
+          const flip = true; // whether to flip the webcam
+          webcam = new tmImage.Webcam(400, 400, flip); // width, height, flip
+          await webcam.setup(); // request access to the webcam
+          await webcam.play();
+          window.requestAnimationFrame(loop);
+
+          // append elements to the DOM
+          document
+            .getElementById("webcam-container")
+            .appendChild(webcam.canvas);
+          labelContainer = document.getElementById("label-container");
+          for (let i = 0; i < maxPredictions; i++) {
+            // and class labels
+            labelContainer.appendChild(document.createElement("div"));
+          }
+        }
+
+        async function loop() {
+          webcam.update(); // update the webcam frame
+          await predict();
+          window.requestAnimationFrame(loop);
+        }
+
+        // run the webcam image through the image model
+        async function predict() {
+          // predict can take in an image, video or canvas html element
+          const prediction = await model.predict(webcam.canvas);
+          for (let i = 0; i < maxPredictions; i++) {
+            const classPrediction =
+              prediction[i].className +
+              ": " +
+              prediction[i].probability.toFixed(2);
+            labelContainer.childNodes[i].innerHTML = classPrediction;
+          }
+        }
+      </script>
+
+      <h1 id="what_is">What is Machine Learning ?</h1>
+      <p id="what_answer">
+        Machine learning is a way of training Artificial Intelligence (AI),
+        where you give a lot of data (stores up to 10000+ files) to an
+        algorithm, and place it under a specific category (in Teachable
+        Machine). Over time, as the algorithm is trained, it “learns” this
+        repetitive data. Using this knowledge, it makes complex connections,
+        which then can be used to look at a new file and then categorize it.
+      </p>
+    </body>
+  </html>
+</DOCTYPE>
